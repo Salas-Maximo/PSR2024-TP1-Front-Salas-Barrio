@@ -1,0 +1,41 @@
+:root {
+    --color: #ffb81e;
+  }
+body{
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+h1{
+    font-size: 5rem;
+    margin: 3rem;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+div{
+    justify-content: center;
+    align-items: center;
+}
+
+a { 
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgb(88, 88, 243);
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 2rem;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+  }
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h1{
+    text-align: center;
+}
