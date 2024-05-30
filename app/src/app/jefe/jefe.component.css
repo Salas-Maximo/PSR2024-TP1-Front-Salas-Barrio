@@ -96,7 +96,6 @@ ul {
 
 li {
     padding: 8px;
-    border-bottom: 1px solid #5e5775;
     padding-left: 10px;
 }
 li:hover {
@@ -106,7 +105,8 @@ li:hover {
 a{
     text-decoration: none;
     color: white;
-    border: none;
+    border-bottom: 1px solid #5e5775;
+
 }
 
 li:last-child {
