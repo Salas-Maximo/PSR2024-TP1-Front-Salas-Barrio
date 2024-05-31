@@ -1,11 +1,11 @@
 :root {
-    --standard: hsl(254, 10%, 20%);
-    --background: hsl(254, 10%, 13%);
-    --light: hsl(254, 0%, 45%);
-    --dark: hsl(255, 10%, 7%);
-    --text: hsl(254, 20%, 90%);
-    --normal: hsl(48, 100%, 50%);
-    --normal-light:hsl(48, 100%, 80%);;
+    --standard:     hsl(254, 20%, 20%);
+    --background:   hsl(254, 20%, 13%);
+    --light:         hsl(254, 0%, 45%);
+    --dark:          hsl(255, 10%, 7%);
+    --text:          hsl(48, 20%, 90%);
+    --normal:       hsl(48, 100%, 50%);
+    --normal-light:  hsl(48, 90%, 70%);
 }
 
 html {
@@ -18,8 +18,8 @@ body {
 }
 
 h1 {
-    font-size: 5rem;
-    margin: 3rem;
+    font-size: 20px;
+    left: 0;
 }
 
 .navbar {
@@ -27,16 +27,17 @@ h1 {
     padding: 10px;
     margin-bottom: 5%;
     height: 7rem;
-    border-bottom: 1px solid var(--light);
+    border-bottom: 2px solid var(--normal);
     display: flex;
     align-items: center;
 }
 
 .navbar-brand {
     margin: 0;
-    color: var(--text);
+    color: var(--normal);
     font-size: 40px;
     margin-left: 20px;
+    cursor: default;
 }
 
 .container {
@@ -52,10 +53,6 @@ h1 {
 div {
     justify-content: center;
     align-items: center;
-}
-
-h1 {
-    text-align: center;
 }
 
 * {
@@ -75,7 +72,7 @@ h1 {
 .button-container {
     background-color: none;
     height: 50px;
-    width: 900px;
+    width: 75%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -83,22 +80,30 @@ h1 {
 }
 
 button{
+    cursor: pointer;
     height: 35px;
-    width:100px;
-    background-color: var(--normal);
+    width:130px;
+    background-color: var(--background);
     border-radius: 7px;
-    border: 1px solid var(--normal-light);
+    border: 3px solid var(--normal);
     margin-right:10px;
     font-size: 12px;
-    color: black;
+    font-weight: bold;
+    color: var(--normal);
 }
 
 button:hover{
+    background-color: var(--normal);
+    color: var(--background);
+}
 
+button:active{
+    background-color: var(--normal-light);
+    color: var(--background);
 }
 
 .box {
-    width: 900px;
+    width: 75%;
     height: 400px;
     border: 1px solid var(--light);
     border-radius: 7px;
@@ -108,21 +113,24 @@ button:hover{
 .box-title {
     cursor: default;
     position: sticky;
-    top: 0;
     color: var(--text);
     background-color: var(--standard);
+    
     border-radius: 7px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    padding: 10px;
+    
+    padding-left: 10px;
     height: 50px;
     border-bottom: 1px solid var(--light);
+
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+
 }
 
 .box-content {
-    height: calc(400px - 51px); /* Subtracting the height of the title */
+    height: calc(400px - 54px); /* Subtracting the height of the title */
     overflow-y: auto;
 }
 
@@ -138,10 +146,11 @@ li {
 
 li:hover {
     background-color: var(--standard);
+    color: var(--normal);
 }
 
 li:active {
-    background-color: var(--light);
+    background-color: var(--standard);
 }
 
 a {
@@ -153,6 +162,16 @@ a:last-child {
     border-bottom: none;
 }
 
+.button-square{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    right: 10px;
+    background-color: var(--standard);
+    
+}
+
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -161,6 +180,7 @@ a:last-child {
 ::-webkit-scrollbar-thumb {
     background: var(--standard);
     border-radius: 10px;
+    width: 5px;
   }
 
 ::-webkit-scrollbar-track {
@@ -170,5 +190,8 @@ a:last-child {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--standard);
+    background-color: var(--light);
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--text);
 }
