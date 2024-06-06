@@ -4,7 +4,6 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
-import cors from 'cors'; // Import the cors library
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -18,19 +17,9 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Enable CORS for all origins during development (replace with specific origins for production)
-  server.use(cors());  // Add this line at the beginning of your middleware setup
-
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
-const areasRouter = require('./routes/areas'); // Assuming your routes are in a 'routes' folder
-const jefesRouter = require('./routes/jefes');
-const personalesRouter = require('./routes/personales'); // Assuming separate route files for each entity
-
-server.use('/api', areasRouter); // Mount areas routes under '/api/areas'
-server.use('/api', jefesRouter); // Mount jefes routes under '/api/jefes'
-server.use('/api', personalesRouter)
-
+  // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'
   }));
