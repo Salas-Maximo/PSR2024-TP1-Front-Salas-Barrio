@@ -1,24 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from './api.service';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Standalone component
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [ApiService] // Provide ApiService here
+  styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  areas: any[] = []; // Initialize an empty array to store areas data
-
-  constructor(private apiService: ApiService) {
-      console.log(this.apiService); // Should log an instance of ApiService
-  }
-
-  ngOnInit() {
-    this.apiService.getAreas()
-      .subscribe(data => {
-        this.areas = data;
-      });
-  }
+export class AppComponent {
+  title = 'Gestion';
 }

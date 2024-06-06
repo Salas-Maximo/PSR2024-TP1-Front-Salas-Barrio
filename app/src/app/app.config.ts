@@ -1,20 +1,9 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { AreaComponent } from './area/area.component';
-import { AppComponent } from './app.component';
-import { PersonalComponent } from './personal/personal.component';
-import { JefeComponent } from './jefe/jefe.component';
-import { provideClientHydration } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
 
-// Define your routes directly within app.config.ts
-const routes: any[] = [
-  { path: 'areas', component: AreaComponent },  // Use your component classes
-  { path: '', component: AppComponent },
-  { path: 'personal', component: PersonalComponent },
-  { path: 'jefe', component: JefeComponent },
-];
+import { routes } from './app.routes';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(),provideHttpClient()]
+  providers: [provideRouter(routes), provideClientHydration()]
 };
