@@ -1,9 +1,48 @@
-<div *ngIf="area">
-    <h2>{{ area.name }}</h2>
-    <ul>
-      <li *ngFor="let jefe of area.jefes">
-        <a [routerLink]="['/jefe', jefe.id]">{{ jefe.name }}</a>
-      </li>
-    </ul>
-  </div>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTION</title>
+    <link rel="stylesheet" href="area-detail.component.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1 class="navbar-brand">GESTION</h1>
+    </nav>
+
+
+
+
+    <div class="container">
+        <div class="container">
+            <div class="button-container">
+                <button>AGREGAR</button>
+                <button>BORRAR</button>
+                <button>MODIFICAR</button>
+            </div>
+
+        </div>
+        <div *ngIf="area" class="box">
+            <div class="box-title">
+                <h1>{{ area.name }}</h1>
+                <button class="button-square">+</button>
+            </div>
+            <div class="box-content">
+             
+              <ul>
+                <li [routerLink]="['/jefe', jefe.id]" *ngFor="let jefe of area.jefes">
+                  <a>{{ jefe.name }}</a>
+                </li>
+              </ul>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

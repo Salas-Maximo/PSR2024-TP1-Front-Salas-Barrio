@@ -1,3 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTION</title>
+    <link rel="stylesheet" href="jefe-detail.component.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1 class="navbar-brand">GESTION</h1>
+    </nav>
+
+
+
+
+    <div class="container">
+        <div class="container">
+            <div class="button-container">
+                <button>AGREGAR</button>
+                <button>BORRAR</button>
+                <button>MODIFICAR</button>
+            </div>
+
+        </div>
+        <div *ngIf="jefe && area" class="box">
+            <div class="box-title">
+                <h1>{{ jefe.name }} <a>{{ area.name }}</a></h1>
+                <button class="button-square">+</button>
+            </div>
+            <div class="box-content">
+             
+              <ul>
+                <li [routerLink]="['/personal', persona.id]" *ngFor="let persona of jefe.personal">
+                  <a>{{ persona.name }}</a>
+                </li>
+              </ul>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
 <div *ngIf="jefe && area">
   <h2>Jefe: {{ jefe.name }}</h2>
   <p>ID: {{ jefe.id }}</p>
