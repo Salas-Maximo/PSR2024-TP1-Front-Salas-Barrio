@@ -1,0 +1,9 @@
+<div *ngIf="area">
+    <h2>{{ area.name }}</h2>
+    <ul>
+      <li *ngFor="let jefe of area.jefes">
+        <a [routerLink]="['/jefe', jefe.id]">{{ jefe.name }}</a>
+      </li>
+    </ul>
+  </div>
+  

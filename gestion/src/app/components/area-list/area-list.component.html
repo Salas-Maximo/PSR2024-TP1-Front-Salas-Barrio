@@ -1,0 +1,9 @@
+
+<div>
+    <ul>
+      <li *ngFor="let area of areas">
+        <a [routerLink]="['/area', area.id]">{{ area.name }}</a>
+      </li>
+    </ul>
+  </div>
+  

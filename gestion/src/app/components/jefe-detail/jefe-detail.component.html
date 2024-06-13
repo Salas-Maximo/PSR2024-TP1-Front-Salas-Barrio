@@ -1,0 +1,10 @@
+<div *ngIf="jefe && area">
+  <h2>Jefe: {{ jefe.name }}</h2>
+  <p>ID: {{ jefe.id }}</p>
+  <p>Área: {{ area.name }}</p>
+  <ul>
+    <li *ngFor="let persona of jefe.personal">
+      <a [routerLink]="['/personal', persona.id]">{{ persona.name }}</a>
+    </li>
+  </ul>
+</div>
