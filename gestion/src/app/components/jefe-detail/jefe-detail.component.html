@@ -16,17 +16,9 @@
 
 
     <div class="container">
-        <div class="container">
-            <div class="button-container">
-                <button>AGREGAR</button>
-                <button>BORRAR</button>
-                <button>MODIFICAR</button>
-            </div>
-
-        </div>
         <div *ngIf="jefe && area" class="box">
             <div class="box-title">
-                <h1>{{ jefe.name }} <a>{{ area.name }}</a></h1>
+                <h1>{{ jefe.name }} <a style="font-weight: normal; color: hsl(254, 0%, 45%);">{{ area.name }}</a></h1>
                 <button class="button-square">+</button>
             </div>
             <div class="box-content">
@@ -43,25 +35,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-<div *ngIf="jefe && area">
-  <h2>Jefe: {{ jefe.name }}</h2>
-  <p>ID: {{ jefe.id }}</p>
-  <p>Área: {{ area.name }}</p>
-  <ul>
-    <li *ngFor="let persona of jefe.personal">
-      <a [routerLink]="['/personal', persona.id]">{{ persona.name }}</a>
-    </li>
-  </ul>
-</div>

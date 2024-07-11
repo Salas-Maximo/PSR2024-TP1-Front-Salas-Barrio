@@ -130,6 +130,25 @@ button:active{
 
 }
 
+.delete{
+    margin-right: 0;
+    border: none;
+    width: 30px;
+    height: 30px;
+    transform: scale(0.8);
+    display:block;
+    height: 20px;
+    font-size: 20px;
+    right: 10px;
+    background-color: transparent;
+    fill: var(--light);
+}
+
+.delete:hover{
+    fill: red;
+    background-color: transparent;
+}
+
 .box-content {
     height: calc(400px - 54px); /* Subtracting the height of the title */
     overflow-y: auto;
@@ -144,6 +163,7 @@ ul ::hover {
 }
 
 li {
+    justify-content: space-between;
     align-items: center;
     display: flex;
     height: 50px;

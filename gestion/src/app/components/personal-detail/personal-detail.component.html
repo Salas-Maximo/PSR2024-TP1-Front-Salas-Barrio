@@ -1,7 +1,44 @@
-<div *ngIf="persona && jefe && area">
-    <h2>Personal: {{ persona.name }}</h2>
-    <p>ID: {{ persona.id }}</p>
-    <p>Jefe: {{ jefe.name }}</p>
-    <p>Área: {{ area.name }}</p>
-  </div>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTION</title>
+    <link rel="stylesheet" href="personal-detail.component.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1 class="navbar-brand">GESTION</h1>
+    </nav>
+
+    <div class="container">
+        <div *ngIf="area && persona && jefe" class="box">
+            <div class="box-title">
+                <h1>{{ persona.name }}</h1>
+            </div>
+            <div class="box-content">
+                <li>
+                  <a class="titulo">AREA</a>
+                  <a>{{ area.name }}</a>
+                </li>
+                <li>
+                  <a class="titulo">JEFE</a>
+                  <a>{{ jefe.name }}</a>
+                </li>
+                <li>
+                  <a class="titulo">ID</a>
+                  <a>{{ persona.id }}</a>
+                </li>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

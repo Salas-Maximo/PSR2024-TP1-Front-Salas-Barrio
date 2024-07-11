@@ -9,6 +9,7 @@ import { AreaService } from '../../services/area.service';
 })
 export class AreaDetailComponent implements OnInit {
   area: any;
+  newJefe: any = { id: null, name: '' };
 
   constructor(
     private route: ActivatedRoute,
@@ -16,9 +17,22 @@ export class AreaDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadArea();
+  }
+
+  loadArea(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.areaService.getAreas().subscribe(data => {
-      this.area = data.areas.find((a: { id: string | null; }) => a.id == id);
+      this.area = data.areas.find((a:any) => a.id == id);
     });
   }
+  
+  addJefe(): void {
+    const areaId = Number(this.route.snapshot.paramMap.get('id'));
+    this.areaService.addJefe(areaId, this.newJefe).subscribe(() => {
+      this.loadArea();
+      this.newJefe = { id: null, name: '' };
+    });
+  }
+  
 }

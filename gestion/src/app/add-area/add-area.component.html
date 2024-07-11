@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTION</title>
+    <link rel="stylesheet" href="add-area.component.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1 class="navbar-brand">GESTION</h1>
+    </nav>
+    <div class="container">
+        <div class="box">
+            <div class="box-title">
+                <h1>AREA NUEVA</h1>
+            </div>          
+            <div>
+
+                <form (ngSubmit)="addArea()">
+                  <div>
+                    <input type="number" id="id" [(ngModel)]="newArea.id" name="id" required placeholder="ID">
+                  </div>
+                  <div>
+                    <input type="text" id="name" [(ngModel)]="newArea.name" name="name" required placeholder="Nombre">
+                  </div>
+                  <div>  
+                    <button class="botonete " type="submit">Agregar</button>
+                    <button class="botonete "  (click)="cancel()" >Cancelar</button>
+                  </div>
+                </form>
+
+
+              </div>
+            </div>
+        </div>
+</body>
+</html>
+
+
+
+
+

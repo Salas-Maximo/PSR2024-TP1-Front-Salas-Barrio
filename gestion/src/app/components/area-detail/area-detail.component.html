@@ -16,18 +16,10 @@
 
 
     <div class="container">
-        <div class="container">
-            <div class="button-container">
-                <button>AGREGAR</button>
-                <button>BORRAR</button>
-                <button>MODIFICAR</button>
-            </div>
-
-        </div>
         <div *ngIf="area" class="box">
             <div class="box-title">
                 <h1>{{ area.name }}</h1>
-                <button class="button-square">+</button>
+                <button class="button-square" [routerLink]="['/add-jefe', area.id]">+</button>
             </div>
             <div class="box-content">
              
@@ -43,6 +35,4 @@
 
 </body>
 </html>
-
-
 
